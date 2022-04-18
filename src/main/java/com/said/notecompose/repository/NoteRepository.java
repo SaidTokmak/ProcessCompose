@@ -1,4 +1,4 @@
-package com.said.notecompose.reporistory;
+package com.said.notecompose.repository;
 
 import com.said.notecompose.entity.Note;
 import org.springframework.data.jpa.repository.JpaRepository;
