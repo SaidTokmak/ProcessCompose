@@ -1,23 +1,19 @@
 package com.said.notecompose.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 
-@Getter
-@Setter
-@Table(name = "note")
+@Data
+@Table(name = "Note")
 @Entity
 public class Note {
 
     @Id
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
 
     @Column(name = "content")
     private String content;
