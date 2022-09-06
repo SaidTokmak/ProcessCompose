@@ -1,5 +1,6 @@
-package com.said.notecompose.entity;
+package com.said.processcompose.entity;
 
+import com.said.processcompose.dto.ProcessDto;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,4 +31,14 @@ public class Note {
     @Column(name = "date")
     private Date date;
 
+    public ProcessDto toDto() {
+        return ProcessDto.builder()
+                    .id(id)
+                    .content(content)
+                    .isRoot(is_root)
+                    .parentId(parent_id)
+                    .priority(priority)
+                    .date(date)
+                    .build();
+    }
 }

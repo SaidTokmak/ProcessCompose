@@ -1,10 +1,10 @@
-package com.said.notecompose;
+package com.said.processcompose;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotecomposeApplicationTests {
+class ProcessComposeApplicationTests {
 
 	@Test
 	void contextLoads() {

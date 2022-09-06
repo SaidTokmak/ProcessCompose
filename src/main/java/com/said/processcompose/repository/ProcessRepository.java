@@ -1,13 +1,13 @@
-package com.said.notecompose.repository;
+package com.said.processcompose.repository;
 
-import com.said.notecompose.entity.Note;
+import com.said.processcompose.entity.Note;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface NoteRepository extends JpaRepository<Note, Integer> {
+public interface ProcessRepository extends JpaRepository<Note, Integer> {
 
     Note findById(Long id);
 
