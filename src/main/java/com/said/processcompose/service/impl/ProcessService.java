@@ -7,10 +7,8 @@ import com.said.processcompose.service.IProcessService;
 import com.said.processcompose.validation.CreateProcessValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -39,6 +37,12 @@ public class ProcessService implements IProcessService {
     @Override
     public List<Note> getProcessesByPriority(String priority) {
         return processRepository.findNotesByPriority(priority);
+    }
+
+    @Override
+    @Transactional
+    public int deleteProcess(Long id) {
+        return processRepository.deleteById(id);
     }
 
 }

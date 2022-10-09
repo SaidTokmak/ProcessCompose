@@ -15,4 +15,6 @@ public interface ProcessRepository extends JpaRepository<Note, Integer> {
 
     List<Note> findNotesByPriority(String priority);
 
+    int deleteById(Long id);
+
 }

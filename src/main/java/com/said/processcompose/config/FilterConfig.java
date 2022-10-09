@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean<ValidationFilter> validationFilter(){
+    public FilterRegistrationBean<ValidationFilter> validationFilterConfig(){
         FilterRegistrationBean<ValidationFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new ValidationFilter());
         registrationBean.addUrlPatterns("/*");
