@@ -2,6 +2,7 @@ package com.said.processcompose.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NonNull;
 
 import java.sql.Date;
 
@@ -10,6 +11,7 @@ import java.sql.Date;
 public class ProcessDto {
     private Long id;
 
+    @NonNull
     private String content;
 
     private String priority;

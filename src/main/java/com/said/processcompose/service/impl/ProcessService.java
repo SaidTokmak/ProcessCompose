@@ -4,9 +4,13 @@ import com.said.processcompose.dto.ProcessDto;
 import com.said.processcompose.entity.Note;
 import com.said.processcompose.repository.ProcessRepository;
 import com.said.processcompose.service.IProcessService;
+import com.said.processcompose.validation.CreateProcessValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -28,6 +32,7 @@ public class ProcessService implements IProcessService {
 
     @Override
     public Note insertProcess(Note note) {
+        CreateProcessValidation.getInstance().validate(note);
         return processRepository.save(note);
     }
 
