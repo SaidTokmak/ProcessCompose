@@ -4,8 +4,10 @@ import com.said.processcompose.dto.ProcessDto;
 import com.said.processcompose.entity.Note;
 import com.said.processcompose.repository.ProcessRepository;
 import com.said.processcompose.service.IProcessService;
+import com.said.processcompose.validation.CreateProcessValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,12 +30,19 @@ public class ProcessService implements IProcessService {
 
     @Override
     public Note insertProcess(Note note) {
+        CreateProcessValidation.getInstance().validate(note);
         return processRepository.save(note);
     }
 
     @Override
     public List<Note> getProcessesByPriority(String priority) {
         return processRepository.findNotesByPriority(priority);
+    }
+
+    @Override
+    @Transactional
+    public int deleteProcess(Long id) {
+        return processRepository.deleteById(id);
     }
 
 }

@@ -36,4 +36,9 @@ public class ProcessController {
         return processService.getProcessesByPriority(priority);
     }
 
+    @DeleteMapping(value = "/process/{id}")
+    public ResponseEntity<Integer> deleteProcess(@PathVariable Long id) {
+        return ResponseEntity.ok(processService.deleteProcess(id));
+    }
+
 }

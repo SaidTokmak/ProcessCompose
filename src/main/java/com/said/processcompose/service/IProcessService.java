@@ -14,4 +14,6 @@ public interface IProcessService {
     Note insertProcess(Note note);
 
     List<Note> getProcessesByPriority(String priority);
+
+    int deleteProcess(Long id);
 }
